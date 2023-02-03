@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Travel reservation form</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Travel reservation form</h1>
+      <p class="mandatory">* denotes mandatory</p>
+      <form>
+        <div class="form-group">
+          <label for="fullName"
+            >Full Name<span class="mandatory">*</span>:
+          </label>
+          <input type="text" id="fullName" name="fullName" />
+        </div>
+        <div class="form-group">
+          <label for="email"
+            >Email Address <span class="mandatory">*</span>:
+          </label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="form-group">
+          <label for="tourPackage"
+            >Select Tour Package <span class="mandatory">*</span>:
+          </label>
+          <select id="tourPackage" name="tourPackage">
+            <option value="">Select...</option>
+            <option value="Goa">Goa</option>
+            <option value="Nainital">Nainital</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Kashmir">Kashmir</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="arrivalDate"
+            >Arrival Date <span class="mandatory">*</span>:
+          </label>
+          <input type="date" id="arrivalDate" name="arrivalDate" />
+        </div>
+        <div class="form-group">
+          <label for="persons"
+            >Number of persons <span class="mandatory">*</span>:
+          </label>
+          <input type="number" id="persons" name="numberOfPersons" />
+        </div>
+        <div class="form-group">
+          <p>What would you want to avail? <span class="mandatory">*</span></p>
+          <label for="boarding">
+            <input
+              type="checkbox"
+              id="boarding"
+              value="boarding"
+              name="services"
+            />
+            Boarding
+          </label>
+          <label for="fooding">
+            <input
+              type="checkbox"
+              id="fooding"
+              value="fooding"
+              name="services"
+            />
+            Fooding
+          </label>
+          <label for="sightSeeing">
+            <input
+              type="checkbox"
+              id="sightSeeing"
+              value="sightSeeing"
+              name="services"
+            />
+            Sight Seeing
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="couponCode">Discount coupon code:</label>
+          <input type="text" id="couponCode" name="couponCode" />
+        </div>
+        <div class="form-group">
+          <label for="terms">
+            <input type="checkbox" id="terms" name="termsAndConditions" />
+            I accept the terms and conditions
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <ul class="form__error-list"></ul>
+    </div>
+    <script src="validation.js"></script>
+  </body>
+</html>
