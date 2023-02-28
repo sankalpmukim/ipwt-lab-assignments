@@ -1,0 +1,85 @@
+/* Change background color of buttons on hover */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Style the "Extract Text" button */
+#extract {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Style the search input and button */
+#search {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#search-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the towns list */
+#towns {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/* Style the submit button */
+#submit {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the Remove CSS button */
+#remove-css-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Add styles to the click output div */
+#click-output {
+  margin-top: 10px;
+}
+
+/* Change color of the remove-css paragraph on button click */
+#remove-css-btn:focus ~ #remove-css {
+  color: black;
+}
+
+/* Add a border to the disabled submit button */
+#submit:disabled {
+  border: 1px solid #999;
+  opacity: 0.5;
+}
+
+/* Add a bold font weight to elements with the "bold" class */
+.bold {
+  font-weight: bold;
+}
+
+/* Add styles to the h1 tags */
+h1 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}

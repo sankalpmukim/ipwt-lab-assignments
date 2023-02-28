@@ -1,0 +1,31 @@
+#container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.select-box {
+  width: 200px;
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#list-container {
+  width: 400px;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}

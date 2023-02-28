@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Query Demonstration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style type="text/css">
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>1. Background Color Change on Hover</h1>
+    <button class="red">Red</button>
+    <button class="green">Green</button>
+    <button class="blue">Blue</button>
+
+    <h1>2. Extract Text from List</h1>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button id="extract">Extract Text</button>
+
+    <h1>3. Search in List</h1>
+    <input type="text" id="search" />
+    <button id="search-btn">Search</button>
+    <ul id="towns">
+      <li>New York</li>
+      <li>London</li>
+      <li>Paris</li>
+      <li>Tokyo</li>
+    </ul>
+
+    <h1>4. Enable/Disable Submit Button</h1>
+    <form>
+      <input type="checkbox" id="check" />
+      <input type="submit" id="submit" disabled />
+    </form>
+
+    <h1>5. Mouse Click Distinction</h1>
+    <form onsubmit="preventDefault">
+      <label for="mouse-click-disable">
+        Enable/Disable Mouse Click Event Listener
+        <input type="checkbox" id="mouse-click-disable" />
+      </label>
+    </form>
+    <div id="click-output"></div>
+
+    <h1>6. Remove CSS</h1>
+    <p id="remove-css" style="color: green">
+      This text should change color when you click the button
+    </p>
+    <button id="remove-css-btn">Remove CSS</button>
+    <script src="./jqueryexample.js"></script>
+  </body>
+</html>
