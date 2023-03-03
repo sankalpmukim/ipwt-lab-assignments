@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ABC Complaint Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      .card {
+        margin: 20px;
+      }
+      .error-message {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Complaint Details</h2>
+        </div>
+        <div class="card-body">
+          <form id="complaint-form">
+            <div class="form-group">
+              <label for="complaint-id">Complaint ID:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="complaint-id"
+                name="complaint-id"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div id="complaint-details"></div>
+          <div id="error-message" class="error-message"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Handle form submit event
+      $("#complaint-form").submit(function (event) {
+        event.preventDefault();
+        var complaintId = $("#complaint-id").val();
+        $.ajax({
+          url: "http://localhost:8000/complaints/" + complaintId,
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            // Display complaint details
+            if (data.compstatus !== "completed") {
+              var html =
+                "<p><strong>Complaint ID:</strong> " +
+                data.compid +
+                "</p>" +
+                "<p><strong>Complaint Type:</strong> " +
+                data.comptype +
+                "</p>" +
+                "<p><strong>Complaint Description:</strong> " +
+                data.compdescription +
+                "</p>" +
+                "<p><strong>Solution:</strong> " +
+                (data.solution || "N/A") +
+                "</p>" +
+                "<p><strong>Complaint Status:</strong> " +
+                data.compstatus +
+                "</p>" +
+                "<p><strong>Customer ID:</strong> " +
+                data.customerid +
+                "</p>";
+              $("#complaint-details").html(html);
+              $("#error-message").hide();
+            } else {
+              $("#error-message").html("Complaint is closed");
+              $("#complaint-details").empty();
+              $("#error-message").show();
+            }
+          },
+          error: function (xhr, status, error) {
+            // Display error message
+            if (xhr.status === 404) {
+              $("#error-message").html("Complaint not found");
+            } else if (xhr.status === 400) {
+              $("#error-message").html("Invalid complaint ID");
+            } else if (xhr.status === 409) {
+              $("#error-message").html("Complaint is closed");
+            } else {
+              $("#error-message").html("Server error");
+            }
+            $("#complaint-details").empty();
+            $("#error-message").show();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
