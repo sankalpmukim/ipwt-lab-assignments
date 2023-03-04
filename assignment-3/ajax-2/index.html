@@ -51,7 +51,9 @@
         event.preventDefault();
         var complaintId = $("#complaint-id").val();
         $.ajax({
-          url: "http://localhost:8000/complaints/" + complaintId,
+          url:
+            "https://ipwt-complaintsbackend.sankalpmukim.dev/complaints/" +
+            complaintId,
           type: "GET",
           dataType: "json",
           success: function (data) {
