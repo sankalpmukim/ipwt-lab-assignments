@@ -1,0 +1,46 @@
+Create a website for blood donation tracking using a static frontend and nodejs + mysql backend.
+Follow the following configurations
+
+Table schema:
+
+Table A: Donor
+S.No, Field Name, Data type, Not Null?, Constraint
+1.  Donor_id, Number, Primary Key, Primary Key 
+2.  Name, Varchar, Not Null, <no Constraint>  
+3.  City, Varchar, Not Null, <no Constraint>  
+4.  Phone, number, Varchar, Not Null, <no Constraint>  
+5.  Blood Type, Varchar, Not Null, Should allow only ( A ,B,O,AB ) 
+6.  Rh Factor, Varchar, Not Null, Should allow only ( POSITIVE , NEGATIVE ) 
+7.  Address Varchar Not Null, <no Constraint>
+
+Table B: BloodDonateData
+S.no, Field Name, Data type, Not Null?, Constraint 
+1.  DonateID, Number, Primary Key, Primary Key 
+2.  Donor_id, Number, Not Null, Foreign Key to TBL_Donor 
+3.  Donate Date, Date, Not Null, <no Constraint>  
+4.  Amount Paid, Number, Not Null, Default Zero
+
+Create a Home page with the following Links
+1. Create Donor (Registration Page, on Registration, redirect to Success Page)
+2. Search Donor based on city and / or Blood type - Only Member can access.
+3. Also all the pages should have a link to home page
+
+Create Donor Web Page (Registration) requirements:
+
+Field Name, Type of Control, Mandatory/ Non-mandatory, Validations, Remarks 
+1,Name, Text Box, Mandatory, <no validations>, <no remarks>   
+2,City, Dropdown, Mandatory, <no validations>, (Chennai, Tambaram, Adyar, Velachery, Ambattur, Avadi, Perambur) 
+3,Phone number, Text Box, Mandatory, Length 10, Should accept only numbers 
+4Blood Type, Drop down, Mandatory, Should allow only ( A ,B,O,AB ), As given in TABLE_Donor 
+5,Rh Factor, Radio Button, POSITIVE/NEGATIVE, <no validations>, As given in TABLE_Donor
+6,Address, Text Box, optinal, If value is entered - then should be length minimum 80 character 
+
+ There should be a create donor button that will insert the data into the database and redirect to success page after form validation.
+
+ There should also be a clear button that will clear all the fields.
+
+Perform the following steps.
+ Write the schema generation script for the above tables.
+ A nodejs + Express backend for the API
+  A static frontend for the website
+  The frontend should have neat css and should be responsive. Use javascript to perform validations.
